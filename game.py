@@ -1,12 +1,14 @@
 import tkinter as tk
 import random
 import pygame
+import numpy
 from threading import Lock
+
 
 def main_music():
     pygame.init()
     pygame.mixer.init()
-    song = pygame.mixer.Sound("tetris.mp3")
+    song = pygame.mixer.Sound("Theracy but Bandu.mp3")
     song.play()
 
     while pygame.mixer.get_busy():
