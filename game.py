@@ -1,8 +1,20 @@
 import tkinter as tk
 import random
+import pygame
 from threading import Lock
 
+def main_music():
+    pygame.init()
+    pygame.mixer.init()
+    song = pygame.mixer.Sound("tetris.mp3")
+    song.play()
+
+    while pygame.mixer.get_busy():
+        pass
+
 COLORS = ['gray', 'lightgreen', 'pink', 'blue', 'orange', 'purple']
+
+main_music()
 
 class Tetris():
     FIELD_HEIGHT = 20
@@ -17,7 +29,9 @@ class Tetris():
         [(0, 0), (1, 0), (1, 1), (2,1)], # S
         [(0, 1), (1, 1), (2, 1), (3,1)], # I
     ]
-    
+
+
+
     def __init__(self):
         self.field = [[0 for c in range(Tetris.FIELD_WIDTH)] for r in range(Tetris.FIELD_HEIGHT)]
         self.score = 0
